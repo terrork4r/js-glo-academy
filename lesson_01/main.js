@@ -27,7 +27,9 @@ let money = +prompt('Ваш месячный доход?'),
 //  2)  вывести в консоль в виде массива 
 console.log(addExpenses.split(', '));  
 // 4) Вывести в консоль типы данных money, income, deposit
-console.log("money:", typeof  money, "income:", typeof income, "deposit:", typeof deposit);
+console.log("money:", typeof  money);
+console.log("income:", typeof income);
+console.log("deposit:", typeof deposit);
 /* 6) Вычислить доход за месяц, учитывая обязательные расходы, сохранить в переменную budgetMonth
  и вывести результат в консоль*/
 console.log(budgetMonth = money - amount - amount2);
