@@ -30,7 +30,9 @@ switch (lang){
 week = [ ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
          ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn']
 ] ;
-alert(String (lang === 'ru')); 
+week = (lang === "ru") ? week[0] :
+       (lang === "en") ? week[1] : 'некоректные данные' ;
+alert(week);
 
 
 
