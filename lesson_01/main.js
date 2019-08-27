@@ -32,14 +32,14 @@ console.log("income:", typeof income);
 console.log("deposit:", typeof deposit);
 /* 6) Вычислить доход за месяц, учитывая обязательные расходы, сохранить в переменную budgetMonth
  и вывести результат в консоль*/
-console.log(budgetMonth = money - amount - amount2);
+console.log("Доход за месяц, с учетом обязательных месячных расходов:", budgetMonth = money - amount - amount2);
 /* 7) Зная budgetMonth, посчитать за сколько месяцев будет достигнута цель mission, вывести
  в консоль, округляя в большую сторону*/
  console.log("Колличество месяцев для достижения mission:", Math.ceil(mission / budgetMonth));
 
  /*8) Поправить budgetDay учитывая бюджет на месяц, а не месячный доход. Вывести в консоль 
   округлив в меньшую сторону (методы объекта Math в помощь)*/
-  console.log(Math.floor(budgetDay = budgetMonth / 30 ));
+  console.log("Доход за день, с учетом обязательных месячных расходов:", Math.floor(budgetDay = budgetMonth / 30 ));
 
 /*  9) Написать конструкцию условий:		
       Если budgetDay больше 800, то “Высокий уровень дохода”
