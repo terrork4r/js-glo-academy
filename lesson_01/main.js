@@ -42,13 +42,19 @@ console.log(getStatusIncome());
 
     // 4 урок
       function getExpensesMonth(a, b){
+        for (let i = 0; i < 2; i++){
+          (a + b) += +prompt('Во сколько нам это обойдется?', 2500);
+        }
          return a + b;
+         
        }
+
         console.log("сумма всех расходов за месяц:", getExpensesMonth(amount, amount2));
 
       function getAccumulatedMonth(a, b){
           return a - b;
         }
+
     const accumulatedMonth = getAccumulatedMonth(money, getExpensesMonth(amount, amount2));
       getAccumulatedMonth(money, getExpensesMonth(amount, amount2));
       console.log("накопления за месяц:", accumulatedMonth);
