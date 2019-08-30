@@ -2,7 +2,7 @@
 let money;
 
 let start = function(){
-  money = prompt('Ваш месячный доход?', 50000);
+
   do {  money = prompt('Ваш месячный доход?', 50000);
     }
   while(isNaN(money) || money === '' || money === null);
@@ -39,7 +39,9 @@ let getExpensesMonth = function(){
       expenses2 = prompt('Введите обязательную статью расходов?', 'Бензин');
     }
 
-    sum += +prompt('Во сколько это обойдется?', 2500);
+    do{ sum = +prompt('Во сколько это обойдется?', 2500);}
+    while(isNaN(sum) || sum === '' || sum === null);
+    sum += sum;
   }
   return sum;
 };
@@ -47,17 +49,17 @@ let getExpensesMonth = function(){
 let expensesAmount = getExpensesMonth();
 
 console.log ('Расходы за месяц: ' + expensesAmount);
-
+// доход с учетом расходов
 let getAccumulatedMonth = function(){
   return money - expensesAmount;
 };
 
 let getTargetMonth = function(){
-  return mission / expensesAmount;
+  return mission / getAccumulatedMonth;
 };
-
+console.log(getTargetMonth);
+//доход за день
 let budgetDay = getAccumulatedMonth() / 30;
-
 console.log('Цель будет достигнута за ' + Math.ceil(getTargetMonth()) + 'месяца');
 
 let getStatusIncome = function(){
