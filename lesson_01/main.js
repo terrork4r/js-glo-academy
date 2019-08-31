@@ -29,7 +29,8 @@ let expenses1,
 console.log(addExpenses.toLowerCase().split(','));
 
 let getExpensesMonth = function(){
-  let sum = 0;
+  let sum = 0,
+      howMutch;
 
   for (let i = 0; i<2; i++){
     if(i === 0){
@@ -38,10 +39,11 @@ let getExpensesMonth = function(){
     if (i === 1){
       expenses2 = prompt('Введите обязательную статью расходов?', 'Бензин');
     }
-
-    do{ sum = +prompt('Во сколько это обойдется?', 2500);}
-    while(isNaN(sum) || sum === '' || sum === null);
-    sum += sum;
+    howMutch = prompt('Во сколько это обойдется?', 2500);
+    while(isNaN(howMutch) || howMutch === '' || howMutch === null){
+      howMutch = prompt('Во сколько это обойдется?', 2500);
+    }
+    sum += +howMutch;
   }
   return sum;
 };
@@ -55,22 +57,33 @@ let getAccumulatedMonth = function(){
 };
 
 let getTargetMonth = function(){
-  return mission / getAccumulatedMonth;
+  return mission / getAccumulatedMonth();
 };
-console.log(getTargetMonth);
+let output = function(){
+  if(getTargetMonth()<0){
+  console.log('Цель не будет достигнута');
+}
+  else{
+    console.log('Цель будет достигнута за ' + Math.ceil(getTargetMonth()) + 'месяца');
+  }
+};
+output();
 //доход за день
 let budgetDay = getAccumulatedMonth() / 30;
-console.log('Цель будет достигнута за ' + Math.ceil(getTargetMonth()) + 'месяца');
+
 
 let getStatusIncome = function(){
-  if(budgetDay < 300){
+  if(budgetDay < 300 && budgetDay >= 0){
     return('Низкий уровень дохода');
   }
-  else if(budgetDay <= 800){
+  if(budgetDay <= 800 && budgetDay >= 300){
     return('Средний уровень дохода');
   }
-  else {
+  if(budgetDay > 800) {
     return('Высокий уровень дохода');
+  }
+  else{
+    return('Что то пошло не так');
   }
 };
 
