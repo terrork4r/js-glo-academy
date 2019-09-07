@@ -27,7 +27,12 @@ let appData = {
   asking: function(){
 
     if(confirm('Есть ли у вас дополнительный заработок?')){
-      let itemIncome = prompt('Какой дополнительный заработок у вас есть?', 'Инвестиции');
+      let itemIncome;
+      do {
+        itemIncome = prompt('Какой дополнительный заработок у вас есть?', 'Инвестиции');
+        }
+        while (!isNaN(itemIncome) || itemIncome === '' || itemIncome === null);
+        
       let cashIncome;
       do {
         cashIncome = prompt('Сколько в месяц вы на этом зарабатываете?', 10000);
@@ -35,14 +40,20 @@ let appData = {
       while (isNaN(cashIncome) || cashIncome === '' || cashIncome === null);
       appData.income[itemIncome] = cashIncome;
     }
-
-    let addExpenses = prompt('Перечислите возможные расходы через запятую', 'сигареты, транспорт, кредит');
-        appData.addExpenses = addExpenses.toLowerCase().split(',');
-        appData.deposit = confirm('Есть ли у вас депозит в банке?');
+    let addExpenses;
+    do {
+      addExpenses = prompt('Перечислите возможные расходы через запятую', 'сигареты, транспорт, кредит');
+    }
+    while (!isNaN(addExpenses) || addExpenses === '' || addExpenses === null);
+        appData.addExpenses = addExpenses.toUpperCase().split(',');
         for (let i = 0; i<2; i++){
           
-          let itemExpenses = prompt('Введите обязательную статью расходов?', 'камунальные услуги'),
+          let itemExpenses, 
               cashExpenses;
+              do {
+                itemExpenses = prompt('Введите обязательную статью расходов?', 'камунальные услуги');
+              }
+              while (!isNaN(itemExpenses) || itemExpenses === '' || itemExpenses === null);
           do {
             cashExpenses = prompt('Во сколько это обойдется?', 3500);
           }
@@ -81,6 +92,7 @@ let appData = {
       }
     },
     getInfoDeposit: function(){
+      appData.deposit = confirm('Есть ли у вас депозит в банке?');
       if(appData.deposit){
         do {
           appData.percentDeposit = prompt('Какой годовой процент?', '10');
@@ -97,12 +109,14 @@ let appData = {
     calcSavedMoney: function(){
       return appData.budgetMonth * appData.period;
     }
+  
 };
 
 
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
+appData.getInfoDeposit();
 
 console.log('Расходы за месяц: ' + appData.expensesMonth);
 
@@ -118,4 +132,4 @@ console.log(appData.getStatusIncome());
 for (let key in appData) {
   console.log('Наша программа включает в себя данные: ' + key + ' - ' + appData [key]);
 }
-console.log(appData.itemIncome);
+console.log(appData.addExpenses);
