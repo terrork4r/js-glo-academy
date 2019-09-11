@@ -1,6 +1,6 @@
 'use strict';
 // Получить кнопку "Рассчитать" через id
-let buttonStart = document.querySelector('#start');
+let buttonStart = document.getElementById('start');
 console.log(buttonStart);
 
 // Получить кнопки “+” (плюс) через Tag, каждую в своей переменной. 
