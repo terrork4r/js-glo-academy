@@ -43,6 +43,12 @@ let resultBudgetMonth = result.querySelector('.result-budget_month'),
   expensesAmount = data.querySelector('.expenses-amount'),
   targetAmount = data.querySelector('.target-amount'),
   periodSelect = data.querySelector('.period-select');
- console.log(inputSalaryAmount, incomeTitle, incomeAmount, additionalIncomeItem,
-   additionalIncomeItem2, expensesTitle, expensesAmount, targetAmount, periodSelect);
-   
+ 
+
+  let func = function(event){
+    console.log(event.type);
+  };
+  buttonStart.addEventListener('mousemove', func);
+  buttonStart.addEventListener('mousup', func);
+  buttonStart.addEventListener('mousedown', func);
+  buttonStart.addEventListener('click', func);
