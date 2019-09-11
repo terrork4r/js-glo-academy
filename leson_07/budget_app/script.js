@@ -45,3 +45,4 @@ console.log(result.querySelectorAll('div')[6]);
  let periodSelect = data.querySelectorAll('input')[12];
  console.log(inputSalaryAmount, incomeTitle, incomeAmount, additionalIncomeItem,
    additionalIncomeItem2, expensesTitle, expensesAmount, targetAmount, periodSelect);
+   
