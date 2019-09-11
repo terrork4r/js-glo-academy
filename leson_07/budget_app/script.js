@@ -19,14 +19,14 @@ console.log(additionalExpensesItem);
 /*Получить все блоки в правой части программы через классы
  (которые имеют класс название-value, начиная с class="budget_day-value" и заканчивая class="target_month-value">)*/
 let result = document.querySelector('div.result');
-console.log(result);
-console.log(result.querySelectorAll('div')[0]);
-console.log(result.querySelectorAll('div')[1]);
-console.log(result.querySelectorAll('div')[2]);
-console.log(result.querySelectorAll('div')[3]);
-console.log(result.querySelectorAll('div')[4]);
-console.log(result.querySelectorAll('div')[5]);
-console.log(result.querySelectorAll('div')[6]);
+
+let resultBudgetMonth = result.querySelector('.result-budget_month'),
+    resultbudgetday = result.querySelector('.result-budget_day'),
+    resulteExpensesMonth = result.querySelector('.result-expenses_month'),
+    resultAdditionalIncome = result.querySelector('.result-additional_income'),
+    resultAdditionalExpenses = result.querySelector('.result-additional_expenses'),
+    resultIncomePeriod = result.querySelector('.result-income_period'),
+    resultTargetMonth = result.querySelector('.result-target_month');
 
 
 /* Получить оставшиеся поля через querySelector каждый в отдельную переменную
@@ -34,15 +34,15 @@ console.log(result.querySelectorAll('div')[6]);
 
  let data = document.querySelector('.data');
  console.log(data.querySelectorAll('input'));
- let inputSalaryAmount = data.querySelectorAll('input')[0];
- let incomeTitle = data.querySelectorAll('input')[1];
- let incomeAmount = data.querySelectorAll('input')[2];
- let additionalIncomeItem = data.querySelectorAll('input')[3];
- let additionalIncomeItem2 = data.querySelectorAll('input')[4];
- let expensesTitle = data.querySelectorAll('input')[5];
- let expensesAmount = data.querySelectorAll('input')[6];
- let targetAmount = data.querySelectorAll('input')[11];
- let periodSelect = data.querySelectorAll('input')[12];
+ let inputSalaryAmount = data.querySelector('.salary-amount');
+ let incomeTitle = data.querySelector('input.income-title');
+ let incomeAmount = data.querySelector('.income-amount');
+ let additionalIncomeItem = data.querySelectorAll('.additional_income-item')[0];
+ let additionalIncomeItem2 = data.querySelectorAll('.additional_income-item')[1];
+ let expensesTitle = data.querySelector('input.expenses-title');
+ let expensesAmount = data.querySelector('.expenses-amount');
+ let targetAmount = data.querySelector('.target-amount');
+ let periodSelect = data.querySelector('.period-select');
  console.log(inputSalaryAmount, incomeTitle, incomeAmount, additionalIncomeItem,
    additionalIncomeItem2, expensesTitle, expensesAmount, targetAmount, periodSelect);
    
