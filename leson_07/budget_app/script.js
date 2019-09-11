@@ -32,17 +32,17 @@ let resultBudgetMonth = result.querySelector('.result-budget_month'),
 /* Получить оставшиеся поля через querySelector каждый в отдельную переменную
  (Инпуты с левой стороны не забудьте про range)*/
 
- let data = document.querySelector('.data');
- console.log(data.querySelectorAll('input'));
- let inputSalaryAmount = data.querySelector('.salary-amount');
- let incomeTitle = data.querySelector('input.income-title');
- let incomeAmount = data.querySelector('.income-amount');
- let additionalIncomeItem = data.querySelectorAll('.additional_income-item')[0];
- let additionalIncomeItem2 = data.querySelectorAll('.additional_income-item')[1];
- let expensesTitle = data.querySelector('input.expenses-title');
- let expensesAmount = data.querySelector('.expenses-amount');
- let targetAmount = data.querySelector('.target-amount');
- let periodSelect = data.querySelector('.period-select');
+ let data = document.querySelector('.data'),
+
+  inputSalaryAmount = data.querySelector('.salary-amount'),
+  incomeTitle = data.querySelector('input.income-title'),
+  incomeAmount = data.querySelector('.income-amount'),
+  additionalIncomeItem = data.querySelectorAll('.additional_income-item')[0],
+  additionalIncomeItem2 = data.querySelectorAll('.additional_income-item')[1],
+  expensesTitle = data.querySelector('input.expenses-title'),
+  expensesAmount = data.querySelector('.expenses-amount'),
+  targetAmount = data.querySelector('.target-amount'),
+  periodSelect = data.querySelector('.period-select');
  console.log(inputSalaryAmount, incomeTitle, incomeAmount, additionalIncomeItem,
    additionalIncomeItem2, expensesTitle, expensesAmount, targetAmount, periodSelect);
    
