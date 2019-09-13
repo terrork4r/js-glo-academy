@@ -1,14 +1,8 @@
 'use strict';
-let money,
-    start = function(){
+let money;
+  
 
-  do { 
-     money = prompt('Ваш месячный доход?', 50000);
-    }
-  while(isNaN(money) || money === '' || money === null);
-};
 
-start();
 
 let appData = {
   budget: money,
@@ -24,6 +18,13 @@ let appData = {
   moneyDeposit: 0,
   mission: 50000,
   period: 3,
+  start: function(){
+
+    do { 
+       money = prompt('Ваш месячный доход?', 50000);
+      }
+    while(isNaN(money) || money === '' || money === null);
+  },
   asking: function(){
 
     if(confirm('Есть ли у вас дополнительный заработок?')){
