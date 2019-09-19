@@ -57,7 +57,7 @@ let appData = {
       appData.getBudget();
       
       appData.showResult();
-      start.addEventListener('click', appData.blocked());
+      appData.blocked();
   },
   showResult: function(){
       budgetMonthValue.value = appData.budgetMonth;
@@ -72,7 +72,7 @@ let appData = {
       });
   },
   blocked: function(){
-   let input = document.querySelector('.data input');
+   let input = document.querySelectorAll('.data input');
     input.forEach(function(item){
       if(item.className !== "period-select"){
       item.disabled = true;
