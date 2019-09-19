@@ -1,5 +1,6 @@
 'use strict';
 let start = document.getElementById('start'),
+    cancel = document.getElementById('cancel'),
     btnPlus = document.getElementsByTagName('button'),
     incomePlus = btnPlus[0],
     expensesPlus = btnPlus[1],
@@ -54,8 +55,9 @@ let appData = {
       appData.getAddExpenses();
       appData.getAddIncome();
       appData.getBudget();
-
+      
       appData.showResult();
+      start.addEventListener('click', appData.blocked());
   },
   showResult: function(){
       budgetMonthValue.value = appData.budgetMonth;
@@ -65,9 +67,19 @@ let appData = {
       additionalIncomeValue.value = appData.addIncome.join(', ');
       targetMonthValue.value = Math.ceil(appData.getTargetMonth());
       incomePeriodValue.value = appData.calcPeriod();
-      periodSelect.addEventListener('change', function(){
+      periodSelect.addEventListener('input', function(){
         incomePeriodValue.value = appData.calcPeriod();
       });
+  },
+  blocked: function(){
+   let input = document.querySelector('.data input');
+    input.forEach(function(item){
+      if(item.className !== "period-select"){
+      item.disabled = true;
+    }
+    });
+    start.style.display = 'none';
+    cancel.style.display = 'block';
   },
   addExpensesBlock: function(){
     
@@ -177,6 +189,7 @@ expensesPlus.addEventListener('click', appData.addExpensesBlock);
 periodSelect.addEventListener('input', function(){
   document.querySelector('.period-amount').textContent = periodSelect.value;
 });
+
 console.log(periodSelect.value);
 // appData.getInfoDeposit();
 
