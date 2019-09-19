@@ -45,9 +45,10 @@ let appData = {
   moneyDeposit: 0,
   start: function(){
       if(salaryAmount.value === ''){
-        alert('Ошибка, поле "Месячный доход" должно быть заполнено!');
+        start.disabled = true;
         return;
       }
+      
     appData.budget = +salaryAmount.value;
       appData.getExpenses();
       appData.getIncome();
